@@ -70,6 +70,8 @@ function imageTemplate(image) {
   return `<li class="gallery-item">
   <a class="gallery-link" href="${image.original}">
     <img
+      width=360;
+      height=200;
       class="gallery-image"
       src="${image.preview}"
       data-source="${image.original}"
@@ -95,12 +97,11 @@ function onImageClick(event) {
     const imgLink = event.target.dataset.source;
     const imgDescription = event.target.alt;
     const instance = basicLightbox.create(`
-        <img src= "${imgLink}" width=1112 height=640
+        <img src= "${imgLink}"  width=1112 height=640
         alt="${imgDescription}">
         </img>
 `);
     instance.show();
-    console.log("hello");
   }
   return;
 }
